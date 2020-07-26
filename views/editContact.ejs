@@ -1,0 +1,16 @@
+<form action="/updatecontact/<%= datarow.contact_id%>" method="POST">
+		<input type="text" name="fullname" placeholder="fullname" style="font-size:25px;" value="<%= datarow.contact_fullname%>">
+		<br/><br/>
+		<input type="text" name="phoneno" placeholder="Phone Number" style="font-size:25px;" value="<%= datarow.contact_phoneNo%>">
+		<br/><br/>
+		<input type="text" name="address" placeholder="Address" style="font-size:25px;" value="<%= datarow.contact_address%>">
+		<br/><br/>
+		<input type="text" name="email" placeholder="Email" style="font-size:25px;" value="<%= datarow.contact_email%>">
+		<br/><br/>
+		
+		<input type="hidden" name="contactID" value="<%= datarow.contact_id%>">
+		<br/><br/>
+		
+		<input type="submit" name="addUpdate" value="Update contact" style="font-size:25px;">
+	</form>
+	

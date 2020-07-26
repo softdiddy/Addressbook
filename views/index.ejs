@@ -1,0 +1,46 @@
+<form action="/addNewContact" method="POST">
+		<input type="text" name="fullname" placeholder="fullname" style="font-size:25px;">
+		<br/><br/>
+		<input type="text" name="phoneno" placeholder="Phone Number" style="font-size:25px;">
+		<br/><br/>
+		<input type="text" name="address" placeholder="Address" style="font-size:25px;">
+		<br/><br/>
+		<input type="text" name="email" placeholder="Email" style="font-size:25px;">
+		<br/><br/>
+		<input type="submit" name="addButton" value="Add new contact" style="font-size:25px;">
+	</form>
+	<% if(msg !=""){ %>
+		<h5><%= msg %></h5>
+	<% } %>
+	
+<table width="100%" border='1px'>
+	<tr>
+		<td width="2%">SN</td>
+		<td width="25%">Fullname</td>
+		<td width="18%">Phone Number</td>
+		<td width="25%">Address</td>
+		<td width="20%">Email</td>
+		<td width="5%"></td>
+		<td width="5%"></td>
+	</tr>
+	
+	<% datarow.forEach(function(data) {%>
+		
+		<tr>
+		<td width="2%"></td>
+		<td width="25%"><%= data.contact_fullname %></td>
+		<td width="18%"><%= data.contact_phoneNo %></td>
+		<td width="30%"><%= data.contact_address %></td>
+		<td width="20%"><%= data.contact_email %></td>
+		<td width="5%"><a href="/edit/<%=data.contact_id%>" />Edit</a></td>
+		<td width="5%"><a href="/delete/<%=data.contact_id%>" />Delete</a></td>
+	</tr>
+		
+		
+	<% 
+		
+	}); 
+	
+	%>
+	
+</table>
